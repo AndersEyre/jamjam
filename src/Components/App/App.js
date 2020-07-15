@@ -12,7 +12,7 @@ class App extends React.Component {
     super(props);
 
     this.state={
-      searchResults: [],
+      searchResults:[],
       playlistName: 'New Playlist',
       playlistTracks: [] 
     };

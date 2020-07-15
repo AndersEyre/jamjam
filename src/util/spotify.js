@@ -7,7 +7,32 @@ const clientId = 'c4941186f85e48c8b87713e6e8f5d8e5';
 
 const spotify = {
 
-  search(term) {
+    search(term){
+        const accessToken = spotify.getAccessToken();
+        return fetch(`https://api.spotify.com/v1/search?type=track&q=${term}`,{
+            headers: { Authorization : `Bearer ${accessToken}`}
+        }).then(response => {
+            return response.json();
+        }).then(jsonReponse => {
+            if(!jsonReponse.track){
+                return [];
+            }
+            return jsonReponse.track.items.map(track => {
+               return {
+                    id: track.id,
+                    name: track.name,
+                    artist: track.artist[0].name,
+                    album:track.album.name,
+                    uri:track.uri,
+                }
+            }
+
+            )
+        })
+    },
+
+    /*
+      search(term) {
     const searchUrl = `https://api.spotify.com/v1/search?type=track&q=${term.replace(' ', '%20')}`;
     return fetch(searchUrl, {
         headers: {
@@ -28,6 +53,7 @@ const spotify = {
         })
       });
   },
+  */
 
     getAccessToken(){
         if(accessToken){
