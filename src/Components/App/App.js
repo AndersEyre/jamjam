@@ -24,11 +24,11 @@ class App extends React.Component {
     this.search = this.search.bind(this);
   }
 
-  search(term){
-    spotify.search(term).then(searchResults => 
-      this.setState({
-        searchResults: searchResults
-      }));
+  search(term) {
+    spotify.search(term).then(searchResults => {
+      console.log(searchResults)
+      this.setState({searchResults: searchResults})
+    });
   }
 
   updatePlaylistName(name){

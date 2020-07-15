@@ -10,22 +10,28 @@ const spotify = {
 
     search(term){
         const accessToken = spotify.getAccessToken();
-        return fetch(`https://api.spotify.com/v1/search?type=track&q=${term}`,{
+        console.log(term)
+        return fetch(`https://api.spotify.com/v1/search?type=track&q=${encodeURIComponent(term)}`,{
             headers: { Authorization : `Bearer ${accessToken}`}
         }).then(response => {
+            console.log(response)
             return response.json();
         }).then(jsonReponse => {
-            if(!jsonReponse.track){
+            console.log(jsonReponse)
+            if(!jsonReponse.tracks){
+                console.log('notracks')
                 return [];
-            }
+            } 
             return jsonReponse.tracks.items.map(track => {
+                
                return {
                     id: track.id,
                     name: track.name,
                     artist: track.artists[0].name,
-                    album:track.album.name,
-                    uri:track.uri,
+                    album: track.album.name,
+                    uri: track.uri,
                 }
+                
         
             }
 
@@ -70,7 +76,7 @@ const spotify = {
       expiresIn = urlExpiresIn[1];
       window.setTimeout(() => accessToken = '', expiresIn * 1000);
       window.history.pushState('Access Token', null, '/');
-      return accessToken
+      return accessToken;
     } else {
       window.location = spotifyUrl;
     }
