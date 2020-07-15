@@ -12,9 +12,10 @@ class App extends React.Component {
     super(props);
 
     this.state={
-      searchResults:[],
+      
       playlistName: 'New Playlist',
-      playlistTracks: [] 
+      playlistTracks: [],
+      searchResults:[], 
     };
     this.addTrack = this.addTrack.bind(this);
     this.removeTrack = this.removeTrack.bind(this);
