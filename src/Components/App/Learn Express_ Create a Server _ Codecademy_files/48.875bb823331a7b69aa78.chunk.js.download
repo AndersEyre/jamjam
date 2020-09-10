@@ -1,0 +1,2 @@
+(window.__LOADABLE_LOADED_CHUNKS__=window.__LOADABLE_LOADED_CHUNKS__||[]).push([[48],{cQ3R:function(e,t,n){"use strict";var a=n("q1tI"),_=n.n(a),c=n("qhky");t.a=({title:e,description:t})=>{const n=`${e} | Codecademy`;return _.a.createElement(c.a,null,e&&_.a.createElement("title",null,n),t&&_.a.createElement("meta",{name:"description",content:t}))}}}]);
+//# sourceMappingURL=48.875bb823331a7b69aa78.chunk.js.map

@@ -1,7 +1,7 @@
 
 let accessToken;
 
-const redirectURI = 'http://localhost:3000/';
+const redirectURI = 'http://Jammyjam.surge.sh/';
 const clientId = 'c4941186f85e48c8b87713e6e8f5d8e5';
 const spotifyUrl = `https://accounts.spotify.com/authorize?response_type=token&scope=playlist-modify-public&client_id=${clientId}&redirect_uri=${redirectURI}`;
 

@@ -1,0 +1,2 @@
+(window.__LOADABLE_LOADED_CHUNKS__=window.__LOADABLE_LOADED_CHUNKS__||[]).push([[126],{"37Dv":function(t,_,e){"use strict";e.d(_,"a",function(){return n});var a=e("YA6q");const n=async t=>{await Object(a.a)({endpoint:"/admin/feature_flags/toggle_user",data:{feature_flag:"le_next",user_id:t},method:"POST"}),document.location.reload()}}}]);
+//# sourceMappingURL=126.f4df1c62b273549b6932.chunk.js.map
